@@ -1,0 +1,26 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use Src\Domain\Vendor\Http\Controllers\SAC\VendorprofileController;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+
+
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::resource('/vendors','VendorController');
+	###CRUD_PLACEHOLDER###
+});
+
+Route::group(['middleware' => ['auth:vendor-api','scope:vendor']], function () {
+    Route::get('/vendor-profile',[VendorprofileController::class,'show']);
+	###CRUD_PLACEHOLDER###
+});
