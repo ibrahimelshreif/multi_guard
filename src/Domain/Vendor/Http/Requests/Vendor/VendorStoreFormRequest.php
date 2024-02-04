@@ -26,8 +26,12 @@ class VendorStoreFormRequest extends FormRequest
     {
         $rules = [
             'name'        => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string', 'min:4', 'max:8'],
+            'email'       => ['required', 'string', 'email'],
+            'password'    => ['required', 'string', 'min:4', 'max:8'],
+            'categories'  =>['required', 'array',],
+            'locations'     =>['required', 'array',],
+
+
         ];
         return $rules;
     }

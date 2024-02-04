@@ -97,6 +97,8 @@ class ClientController extends Controller
     public function store(ClientStoreFormRequest $request)
     {
         $store = $this->clientRepository->create($request->validated());
+        $store->locations()->sync($request->validated()['locations']);
+
     //     $store->fill([
     //         'password' => Hash::make($store->password)
     //    ])->save();

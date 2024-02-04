@@ -96,6 +96,8 @@ class VendorController extends Controller
     public function store(VendorStoreFormRequest $request)
     {
         $store = $this->vendorRepository->create($request->validated());
+        $store->categories()->sync($request->validated()['categories']);
+        $store->locations()->sync($request->validated()['locations']);
 
         if($store){
             $this->setData('data', $store);

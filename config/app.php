@@ -175,6 +175,9 @@ return [
 		\Src\Domain\Dashboard\Providers\DomainServiceProvider::class,
 		\Src\Domain\Client\Providers\DomainServiceProvider::class,
 		\Src\Domain\Vendor\Providers\DomainServiceProvider::class,
+		\Src\Domain\Category\Providers\DomainServiceProvider::class,
+		\Src\Domain\Location\Providers\DomainServiceProvider::class,
+		// \Src\Domain\Location\Providers\DomainServiceProvider::class,
 		###DOMAINS SERVICE PROVIDERS###
     ],
 

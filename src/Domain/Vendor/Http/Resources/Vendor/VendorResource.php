@@ -3,6 +3,7 @@
 namespace Src\Domain\Vendor\Http\Resources\Vendor;
 
 use Illuminate\Http\Request;
+use Src\Domain\Category\Http\Resources\Category\CategoryResource;
 use Src\Infrastructure\Http\AbstractResources\BaseResource as JsonResource;
 
 class VendorResource extends JsonResource
@@ -19,6 +20,7 @@ class VendorResource extends JsonResource
             'id'               => $this->id,
             'name'             => $this->name,
             'email'            => $this->email,
+            'categories'       => CategoryResource::collection($this->whenLoaded('categories1')),
         ];
     }
 }

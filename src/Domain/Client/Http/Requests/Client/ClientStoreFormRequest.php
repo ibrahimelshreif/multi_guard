@@ -29,6 +29,8 @@ class ClientStoreFormRequest extends FormRequest
             'name' => ['required', 'string'],
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string', 'min:4', 'max:8'],
+            'locations'     =>['required', 'array',],
+
         ];
         return $rules;
     }

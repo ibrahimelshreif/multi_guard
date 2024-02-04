@@ -32,6 +32,7 @@ class VendorRepositoryEloquent extends EloquentRepository implements VendorRepos
     protected $allowedIncludes = [
         ###allowedIncludes###
     	###\allowedIncludes###
+        'Categories'
     ];
 
     /**

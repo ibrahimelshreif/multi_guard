@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('/clients','ClientController');
+	Route::resource('/categories','CategoryController');
 	###CRUD_PLACEHOLDER###
 });

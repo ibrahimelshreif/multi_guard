@@ -17,10 +17,12 @@ use Src\Domain\Client\Http\Controllers\SAC\ClientProfileController;
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::resource('/clients','ClientController');
+	Route::resource('/categories','CategoryController');
 	###CRUD_PLACEHOLDER###
 });
 
 Route::group(['middleware' => 'auth:client-api','scope:client'], function () {
     Route::get('/client-profile',[ClientProfileController::class,'show']);
+	Route::resource('/categories','CategoryController');
 	###CRUD_PLACEHOLDER###
 });

@@ -13,6 +13,7 @@ class PolicyServiceProvider extends ServiceProvider
      */
     protected $policies = [
         \Src\Domain\Client\Entities\Client::class => \Src\Domain\Client\Policies\ClientPolicy::class,
+		\Src\Domain\Client\Entities\Category::class => \Src\Domain\Client\Policies\CategoryPolicy::class,
 		###POLICIES###
     ];
 
